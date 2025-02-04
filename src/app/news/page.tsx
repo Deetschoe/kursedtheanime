@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { X, Menu, Search, User } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface NavLinkProps {
   text: string;
@@ -94,9 +95,11 @@ const KursedNewsArticle = () => {
               February 4, 2025 - <span className="text-purple-600">127 Comments</span>
             </div>
 
-            <img 
-              src="https://placehold.co/800x400" 
-              alt="Satellite image showing dense fog bank around suspected location of Yorokobi Island" 
+            <Image 
+              src="https://placehold.co/800x400"
+              alt="Satellite image showing dense fog bank around suspected location of Yorokobi Island"
+              width={800}
+              height={400}
               className="w-full rounded-lg mb-4"
             />
             <p className="text-sm text-gray-600 mb-6">Satellite imagery showing the mysterious fog bank surrounding the suspected location of Yorokobi Island | Image: US-Japan Joint Research Committee</p>
@@ -113,15 +116,15 @@ const KursedNewsArticle = () => {
                 <li>Dr. Yuki Yamamoto - Environmental Scientist</li>
               </ul>
 
-              <p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island's history. Documents obtained through freedom of information requests have revealed that both governments had designated the area as a deep-sea waste disposal site for the past century, believing it to be uninhabited ocean. The quantity and nature of materials deposited there remain classified.</p>
+              <p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island&apos;s history. Documents obtained through freedom of information requests have revealed that both governments had designated the area as a deep-sea waste disposal site for the past century, believing it to be uninhabited ocean. The quantity and nature of materials deposited there remain classified.</p>
 
               <blockquote className="border-l-4 border-purple-600 pl-4 italic my-4 text-black">
-                "If there really is an isolated society that has developed alongside our modern waste disposal practices, the implications for both anthropology and environmental science are staggering. We need to approach this with extreme caution and respect." - Dr. Sakura Tanaka, Lead Anthropologist
+                &quot;If there really is an isolated society that has developed alongside our modern waste disposal practices, the implications for both anthropology and environmental science are staggering. We need to approach this with extreme caution and respect.&quot; - Dr. Sakura Tanaka, Lead Anthropologist
               </blockquote>
 
-              <p className="mb-4">The mysterious island, whose name translates to "Joy Island" in Japanese, has reportedly remained hidden from modern civilization for nearly a millennium. Local legends speak of an autonomous society that developed in complete isolation, creating its own distinct culture and language. The island's apparent resistance to modern detection – surrounded by an unusually dense fog bank that interferes with radio signals, satellite imaging, and GPS systems – has made previous investigations impossible.</p>
+              <p className="mb-4">The mysterious island, whose name translates to &quot;Joy Island&quot; in Japanese, has reportedly remained hidden from modern civilization for nearly a millennium. Local legends speak of an autonomous society that developed in complete isolation, creating its own distinct culture and language. The island&apos;s apparent resistance to modern detection – surrounded by an unusually dense fog bank that interferes with radio signals, satellite imaging, and GPS systems – has made previous investigations impossible.</p>
 
-              <p className="mb-4">Most disturbing are reports from the families of the missing Akebono Maru crew, who claim to have received strange phone calls consisting only of static and what sounds like distant singing in an unknown language. The last radio transmission from the vessel described "lights in the mist" before all contact was lost.</p>
+              <p className="mb-4">Most disturbing are reports from the families of the missing Akebono Maru crew, who claim to have received strange phone calls consisting only of static and what sounds like distant singing in an unknown language. The last radio transmission from the vessel described &quot;lights in the mist&quot; before all contact was lost.</p>
 
               <h2 className="text-2xl font-bold mt-6 mb-4 text-black">Related Stories</h2>
               <ul className="space-y-2 mb-6 text-black">
@@ -147,9 +150,11 @@ const KursedNewsArticle = () => {
                     <X className="w-4 h-4" />
                   </button>
                   <a href={ad.link} className="flex space-x-4">
-                    <img 
-                      src={ad.thumbnail} 
+                    <Image 
+                      src={ad.thumbnail}
                       alt={ad.title}
+                      width={120}
+                      height={80}
                       className="w-24 h-16 object-cover rounded"
                     />
                     <div className="flex-1">
