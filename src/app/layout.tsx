@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kursed The Anime",
   description: "yorokobi island...",
+  icons: {
+    icon: '/favicon.ico'  // Add the forward slash here
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script 
+          defer
+          data-domain="kursedtheanime.com" 
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
