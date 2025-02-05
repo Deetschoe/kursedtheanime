@@ -122,14 +122,13 @@ const KursedNewsArticle = () => {
 
               <p className="mb-4">One of our camera specialists were able to capture this groundbreaking image using new technology developed by Soony Camera Technologies inc., revealing the first clear view of the island through its perpetual fog cover.</p>
 
-              <p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island's history. Documents obtained through freedom of information requests have revealed that both governments had designated the area as a deep-sea waste disposal site for the past century, believing it to be uninhabited ocean. The quantity and nature of materials deposited there remain classified.</p>
+              <p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island&apos;s history. Documents obtained through freedom of information requests have revealed that both governments had designated the area as a deep-sea waste disposal site for the past century, believing it to be uninhabited ocean. The quantity and nature of materials deposited there remain classified.</p>
 
               <blockquote className="border-l-4 border-purple-600 pl-4 italic my-4 text-black">
-                "If there really is an isolated society that has developed alongside our modern waste disposal practices, the implications for both anthropology and environmental science are staggering. We need to approach this with extreme caution and respect." - Dr. Sakura Tanaka, Lead Anthropologist
-              </blockquote>
+  &quot;If there really is an isolated society that has developed alongside our modern waste disposal practices, the implications for both anthropology and environmental science are staggering. We need to approach this with extreme caution and respect.&quot; - Dr. Sakura Tanaka, Lead Anthropologist
+</blockquote>
 
-              <p className="mb-4">The mysterious island, whose name translates to &quot;Joy Island&quot; in Japanese...</p>
-
+<p className="mb-4">The mysterious island, whose name translates to &quot;Joy Island&quot; in Japanese, has reportedly remained hidden from modern civilization for nearly a millennium.</p>
 
 <p className="mb-4">Most disturbing are reports from the families of the missing Akebono Maru crew, who claim to have received strange phone calls consisting only of static and what sounds like distant singing in an unknown language. The last radio transmission from the vessel described &quot;lights in the mist&quot; before all contact was lost.</p>
 
@@ -184,9 +183,10 @@ const KursedNewsArticle = () => {
 
 const NavLink = ({ text }: NavLinkProps) => (
   <Link href="/" className="hover:text-purple-200 transition-colors">
-<p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island&apos;s history...</p>
-
+    {text}
   </Link>
 );
+
+
 
 export default KursedNewsArticle;
