@@ -19,8 +19,8 @@ const nextConfig = {
         hostname: 'japannews.yomiuri.co.jp',
       }
     ],
+    domains: ['media.istockphoto.com', 'i.ibb.co', 'www.usatoday.com', 'japannews.yomiuri.co.jp']
   },
-  reactStrictMode: true,
 }
 
 module.exports = nextConfig

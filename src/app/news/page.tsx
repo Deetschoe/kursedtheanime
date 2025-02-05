@@ -128,7 +128,8 @@ const KursedNewsArticle = () => {
                 "If there really is an isolated society that has developed alongside our modern waste disposal practices, the implications for both anthropology and environmental science are staggering. We need to approach this with extreme caution and respect." - Dr. Sakura Tanaka, Lead Anthropologist
               </blockquote>
 
-              <p className="mb-4">The mysterious island, whose name translates to &quot;Joy Island&quot; in Japanese, has reportedly remained hidden...</p>
+              <p className="mb-4">The mysterious island, whose name translates to &quot;Joy Island&quot; in Japanese...</p>
+
 
 <p className="mb-4">Most disturbing are reports from the families of the missing Akebono Maru crew, who claim to have received strange phone calls consisting only of static and what sounds like distant singing in an unknown language. The last radio transmission from the vessel described &quot;lights in the mist&quot; before all contact was lost.</p>
 
@@ -183,7 +184,7 @@ const KursedNewsArticle = () => {
 
 const NavLink = ({ text }: NavLinkProps) => (
   <Link href="/" className="hover:text-purple-200 transition-colors">
-    {text}<p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island&apos;s history...</p>
+<p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island&apos;s history...</p>
 
   </Link>
 );
