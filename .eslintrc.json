@@ -1,9 +1,7 @@
-// Create a .eslintrc.json file if you don't have one
 {
     "extends": "next/core-web-vitals",
     "rules": {
       "@next/next/no-img-element": "off",
-      "@typescript-eslint/no-unused-vars": "warn",
       "react/no-unescaped-entities": "off"
     }
   }

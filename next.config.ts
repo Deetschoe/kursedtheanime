@@ -20,9 +20,7 @@ const nextConfig = {
       }
     ],
   },
-  // Add these to help with build issues
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 module.exports = nextConfig

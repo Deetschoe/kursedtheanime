@@ -183,7 +183,8 @@ const KursedNewsArticle = () => {
 
 const NavLink = ({ text }: NavLinkProps) => (
   <Link href="/" className="hover:text-purple-200 transition-colors">
-    {text}
+    {text}<p className="mb-4">What makes this investigation particularly concerning are recent revelations about the island&apos;s history...</p>
+
   </Link>
 );
 
