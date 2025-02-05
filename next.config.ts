@@ -7,12 +7,13 @@ const nextConfig = {
         hostname: 'media.istockphoto.com',
       },
       {
-        protocol: 'https',
-        hostname: 'placehold.co',
+        hostname: 'i.ibb.co',
       },
       {
-        protocol: 'https',
-        hostname: 'offbeatjapan.com',  // Adding the new domain
+        hostname: 'www.usatoday.com',
+      },
+      {
+        hostname: 'japannews.yomiuri.co.jp',
       },
     ],
   },

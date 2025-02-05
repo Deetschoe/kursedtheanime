@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { X, Menu, Search, User } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 interface NavLinkProps {
   text: string;
@@ -129,9 +128,10 @@ const KursedNewsArticle = () => {
                 "If there really is an isolated society that has developed alongside our modern waste disposal practices, the implications for both anthropology and environmental science are staggering. We need to approach this with extreme caution and respect." - Dr. Sakura Tanaka, Lead Anthropologist
               </blockquote>
 
-              <p className="mb-4">The mysterious island, whose name translates to "Joy Island" in Japanese, has reportedly remained hidden from modern civilization for nearly a millennium. Local legends speak of an autonomous society that developed in complete isolation, creating its own distinct culture and language. The island's apparent resistance to modern detection – surrounded by an unusually dense fog bank that interferes with radio signals, satellite imaging, and GPS systems – has made previous investigations impossible.</p>
+              <p className="mb-4">The mysterious island, whose name translates to &quot;Joy Island&quot; in Japanese, has reportedly remained hidden...</p>
 
-              <p className="mb-4">Most disturbing are reports from the families of the missing Akebono Maru crew, who claim to have received strange phone calls consisting only of static and what sounds like distant singing in an unknown language. The last radio transmission from the vessel described "lights in the mist" before all contact was lost.</p>
+<p className="mb-4">Most disturbing are reports from the families of the missing Akebono Maru crew, who claim to have received strange phone calls consisting only of static and what sounds like distant singing in an unknown language. The last radio transmission from the vessel described &quot;lights in the mist&quot; before all contact was lost.</p>
+
 
               <h2 className="text-2xl font-bold mt-6 mb-4 text-black">Related Stories</h2>
               <ul className="space-y-2 mb-6 text-black">
