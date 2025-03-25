@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import Script from 'next/script'
 
@@ -53,13 +52,13 @@ const Home = () => {
         <div className="max-w-4xl w-full space-y-6 text-center">
           {/* Title and Countdown */}
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-black pt-2">
-  Pineabur
-</h1>
-
+            Pineabur
+          </h1>
           
           <p className="text-xl text-gray-800">
             A film about a programmer named Maru who discovers AGI in San Francisco
           </p>
+          
           
           <div className="flex justify-center w-full my-6">
             <div className="w-[1080px] h-[1080px] max-w-full relative">
@@ -78,12 +77,6 @@ const Home = () => {
             Release Date: Summer 2025
           </div>
 
-          <div className="bg-gray-100 p-6 rounded-lg my-6 border border-gray-200">
-            <h2 className="text-2xl font-bold mb-4">Open Source Film Project</h2>
-            <p className="text-lg text-gray-700">
-              All project files will be released after the short is finished so people can view how it was made.
-            </p>
-          </div>
 
           {/* Loops Newsletter Form */}
           <div className="w-full max-w-md mx-auto">
@@ -116,7 +109,7 @@ const Home = () => {
               </form>
               <div className="newsletter-success hidden text-center mt-4 text-sm">
                 <p className="newsletter-success-message text-green-500">
-                  Thanks! We'll only send you important updates about Pineabur.
+                  Thanks! We&apos;ll only send you important updates about Pineabur.
                 </p>
               </div>
               <div className="newsletter-error hidden text-center mt-4 text-sm">
