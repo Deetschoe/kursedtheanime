@@ -5,28 +5,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 
 const Home = () => {
-  const [timeLeft, setTimeLeft] = useState('')
 
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const releaseDate = new Date('October 1, 2025 15:00:00 EDT')
-      const now = new Date()
-      const difference = releaseDate.getTime() - now.getTime()
-
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000)
-
-      return `${days}d ${hours}h ${minutes}m ${seconds}s`
-    }
-
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
 
   return (
     <div className="min-h-screen bg-white text-black">
