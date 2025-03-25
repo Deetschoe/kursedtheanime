@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kursed The Anime",
-  description: "yorokobi island...",
+  title: "Pineabur",
+  description: "the adventure awaits...",
   icons: {
     icon: '/favicon.ico'  // Add the forward slash here
   },

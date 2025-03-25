@@ -30,52 +30,60 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#723201] via-[#160f07] to-black text-white">
-      {/* Social Icons */}
-      <div className="fixed top-4 right-4 flex gap-4">
-        <a href="https://discord.gg/kA9qBMbVWq" target="_blank" rel="noopener noreferrer">
-          <Image src="/discord.png" alt="Discord" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-        </a>
-        <a href="https://twitter.com/kursedtheanime" target="_blank" rel="noopener noreferrer">
-          <Image src="/twitter.png" alt="Twitter" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-        </a>
-        <a href="https://instagram.com/kursedtheanime" target="_blank" rel="noopener noreferrer">
-          <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-        </a>
-        <a href="https://minimalmaru.com/collections/pineabur" target="_blank" rel="noopener noreferrer">
-        <div>
-  <div className="pt-1">
-  <span className="text-lg font-medium hover:text-[#b8b8b8]">Support the Series</span>
-  </div>
-</div>        </a>
+    <div className="min-h-screen bg-white text-black">
+      {/* Black Header */}
+      <div className="w-full bg-black py-3 px-4 flex justify-end items-center fixed top-0 z-10">
+        <div className="flex gap-4 items-center">
+          <a href="https://minimalmaru.com/collections/pineabur" target="_blank" rel="noopener noreferrer">
+            <span className="text-white text-lg font-medium hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300">Support the Film</span>
+          </a>
+          <a href="https://discord.gg/pineabur" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+            <Image src="/discord.png" alt="Discord" width={28} height={28} className="brightness-0 invert hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300" />
+          </a>
+          <a href="https://twitter.com/pineabur" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+            <Image src="/twitter.png" alt="Twitter" width={28} height={28} className="brightness-0 invert hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300" />
+          </a>
+          <a href="https://instagram.com/pineabur" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+            <Image src="/instagram.png" alt="Instagram" width={28} height={28} className="brightness-0 invert hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300" />
+          </a>
+        </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 pt-20">
-  <div className="max-w-4xl w-full space-y-8 text-center pt-16 md:pt-3">
-    {/* Title and Countdown */}
-    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#ffffff]">
-      Kursed: Yorokobi Island
-    </h1>
+      <div className="flex flex-col items-center justify-center min-h-screen p-4 pt-16">
+        <div className="max-w-4xl w-full space-y-6 text-center">
+          {/* Title and Countdown */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-black pt-2">
+  Pineabur
+</h1>
+
           
-          <div className="flex justify-center w-full my-8">
-            <iframe 
-              width="628"
-              height="378"
-              src="https://www.youtube.com/embed/1RMU5NwsthU?si=rBjq69dUrPS3-TZd" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin"
-              className="rounded-lg"
-              allowFullScreen
-            />
+          <p className="text-xl text-gray-800">
+            A film about a programmer named Maru who discovers AGI in San Francisco
+          </p>
+          
+          <div className="flex justify-center w-full my-6">
+            <div className="w-[1080px] h-[1080px] max-w-full relative">
+              <Image 
+                src="/pineabur.gif" 
+                alt="Pineabur Film Preview" 
+                width={1080} 
+                height={1080} 
+                className="rounded-lg"
+                priority
+              />
+            </div>
           </div>
 
-          <div className="text-lg md:text-xl font-mono bg-[#723201]/50 p-4 rounded-lg inline-block">
-            {timeLeft} until Pilot Release
+          <div className="text-lg md:text-xl font-mono bg-gray-100 p-4 rounded-lg inline-block border border-gray-200 mb-6">
+            Release Date: Summer 2025
           </div>
 
-
+          <div className="bg-gray-100 p-6 rounded-lg my-6 border border-gray-200">
+            <h2 className="text-2xl font-bold mb-4">Open Source Film Project</h2>
+            <p className="text-lg text-gray-700">
+              All project files will be released after the short is finished so people can view how it was made.
+            </p>
+          </div>
 
           {/* Loops Newsletter Form */}
           <div className="w-full max-w-md mx-auto">
@@ -95,20 +103,20 @@ const Home = () => {
                 />
                 <button 
                   type="submit"
-                  className="newsletter-form-button w-full px-4 py-2 rounded-md bg-[#eebe0f] text-black text-sm font-medium hover:bg-[#d1a609]/90 transition-colors"
+                  className="newsletter-form-button w-full px-4 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 transition-all duration-300"
                 >
-                  Sign up to get reminded
+                  Get updates about the film
                 </button>
                 <button 
                   type="button"
-                  className="newsletter-loading-button hidden w-full px-4 py-2 rounded-md bg-[#d1a609] text-black text-sm font-medium"
+                  className="newsletter-loading-button hidden w-full px-4 py-2 rounded-md bg-gray-800 text-white text-sm font-medium"
                 >
                   Please wait...
                 </button>
               </form>
               <div className="newsletter-success hidden text-center mt-4 text-sm">
                 <p className="newsletter-success-message text-green-500">
-                  Thanks! we promise not to spam only the good stuff
+                  Thanks! We'll only send you important updates about Pineabur.
                 </p>
               </div>
               <div className="newsletter-error hidden text-center mt-4 text-sm">
@@ -126,41 +134,14 @@ const Home = () => {
           </div>
           <br></br>
 
-          <div className="text-sm text-white/70">
-  we are a small independent team producing the series and looking for all sorts of people to speed up production, for biz inquiries:{" "}
-  <a href="mailto:pineabur@gmail.com" className="hover:text-white transition-colors">
-    pineabur@gmail.com
-  </a>
-</div>
-
-          {/* Action Buttons */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
-            <Link 
-              href="/news" 
-              className="bg-[#3c3c3c] hover:bg-[#1d1d1d]/80 px-4 py-2 rounded-md text-sm font-semibold"
-            >
-              News Article
-            </Link>
-            
-            <a 
-              href="https://discord.gg/kA9qBMbVWq" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#454dbd] hover:bg-[#363d9f]/80 px-4 py-2 rounded-md text-sm font-semibold"
-            >
-              Join our Discord
-            </a>
-
-
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdjDGUa8QUheGOuq50B4B0bPbuHgRw5rBb09lpnE6_MsHMDAw/viewform" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#3c3c3c] hover:bg-[#1d1d1d]/80 px-4 py-2 rounded-md text-sm font-semibold"
-            >
-              Apply to the Team
+          <div className="text-sm text-gray-600">
+            For business inquiries:{" "}
+            <a href="mailto:pineabur@gmail.com" className="hover:text-black hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300">
+              pineabur@gmail.com
             </a>
           </div>
+
+
         </div>
       </div>
       <br></br>
