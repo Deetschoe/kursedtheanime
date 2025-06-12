@@ -43,11 +43,14 @@ const Home = () => {
 
       <section className="flex flex-col items-center justify-center w-full px-4 pb-12">
   <div className="newsletter-form-container w-full max-w-md">
-    <form 
-      className="newsletter-form flex flex-col items-center gap-3 w-full bg-transparent p-0 border-0 shadow-none"
-      action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
-      method="POST"
-    >
+  <form 
+  className="newsletter-form flex flex-col items-center gap-3 w-full bg-transparent p-0 border-0 shadow-none"
+  action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
+  method="POST"
+  noValidate
+  target="_self"
+>
+
       <input
         className="newsletter-form-input w-full px-4 py-2 rounded-md border-2 border-[#B7D84B] bg-[#F9F9F9] text-black text-lg focus:outline-none focus:ring-2 focus:ring-[#B7D84B] font-mono"
         name="email"
