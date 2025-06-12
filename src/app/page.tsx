@@ -42,45 +42,49 @@ const Home = () => {
       </div>
 
       <section className="flex flex-col items-center justify-center w-full px-4 pb-12">
-  <form 
-    className="flex flex-col items-center gap-3 w-full max-w-md mx-auto bg-transparent p-0 border-0 shadow-none"
-    action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
-    method="POST"
-  >
-    <input
-      className="w-full px-4 py-2 rounded-md border-2 border-[#B7D84B] bg-[#F9F9F9] text-black text-lg focus:outline-none focus:ring-2 focus:ring-[#B7D84B] font-mono"
-      name="email"
-      type="email"
-      placeholder="youremail@gmail.com"
-      required
-    />
-    <button 
-      type="submit"
-      className="w-full px-4 py-2 rounded-full bg-gradient-to-r from-[#B7D84B] via-green-200 to-blue-100 text-green-900 text-lg font-bold shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-100 hover:to-[#B7D84B] focus:outline-none focus:ring-2 focus:ring-green-400 animate-pop flex items-center justify-center gap-2"
+  <div className="newsletter-form-container w-full max-w-md">
+    <form 
+      className="newsletter-form flex flex-col items-center gap-3 w-full bg-transparent p-0 border-0 shadow-none"
+      action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
+      method="POST"
     >
-      <span>get updates</span>
-    </button>
+      <input
+        className="newsletter-form-input w-full px-4 py-2 rounded-md border-2 border-[#B7D84B] bg-[#F9F9F9] text-black text-lg focus:outline-none focus:ring-2 focus:ring-[#B7D84B] font-mono"
+        name="email"
+        type="email"
+        placeholder="youremail@gmail.com"
+        required
+      />
+      <button 
+        type="submit"
+        className="newsletter-form-button w-full px-4 py-2 rounded-full bg-gradient-to-r from-[#B7D84B] via-green-200 to-blue-100 text-green-900 text-lg font-bold shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-100 hover:to-[#B7D84B] focus:outline-none focus:ring-2 focus:ring-green-400 animate-pop flex items-center justify-center gap-2"
+      >
+        <span>get updates</span>
+      </button>
 
-    <div className="newsletter-loading-button hidden w-full px-4 py-2 text-center text-sm text-gray-600">
-      Submitting...
-    </div>
+      <div className="newsletter-loading-button hidden w-full px-4 py-2 text-center text-sm text-gray-600">
+        Submitting...
+      </div>
 
-    <div className="newsletter-success hidden text-green-700 text-center text-sm">
-      Thanks! stay tuned for updates
-    </div>
+      <div className="newsletter-success hidden text-green-700 text-center text-sm">
+        Thanks! stay tuned for updates
+      </div>
 
-    <div className="newsletter-error hidden text-red-600 text-center text-sm">
-      <span className="newsletter-error-message">Oops! Something went wrong.</span>
-    </div>
+      <div className="newsletter-error hidden text-red-600 text-center text-sm">
+        <span className="newsletter-error-message">Oops! Something went wrong.</span>
+      </div>
 
-    <button 
-      type="button" 
-      className="newsletter-back-button hidden text-blue-600 underline text-sm"
-    >
-      Try again
-    </button>
-  </form>
+      <button 
+        type="button" 
+        className="newsletter-back-button hidden text-blue-600 underline text-sm"
+      >
+        Try again
+      </button>
+    </form>
+  </div>
 </section>
+
+
 
 
       {/* Video Section */}
@@ -148,108 +152,110 @@ const Home = () => {
         </div>
       </footer>
       <Script id="loops-form-handler">{`
-        function submitHandler(event) {
-          event.preventDefault();
-          var container = event.target.parentNode;
-          var form = container.querySelector(".newsletter-form");
-          var formInput = container.querySelector(".newsletter-form-input");
-          var success = container.querySelector(".newsletter-success");
-          var errorContainer = container.querySelector(".newsletter-error");
-          var errorMessage = container.querySelector(".newsletter-error-message");
-          var backButton = container.querySelector(".newsletter-back-button");
-          var submitButton = container.querySelector(".newsletter-form-button");
-          var loadingButton = container.querySelector(".newsletter-loading-button");
+  function submitHandler(event) {
+    event.preventDefault();
+    var container = event.target.parentNode;
+    var form = container.querySelector(".newsletter-form");
+    var formInput = form.querySelector('input[name="email"]');
+    var success = container.querySelector(".newsletter-success");
+    var errorContainer = container.querySelector(".newsletter-error");
+    var errorMessage = container.querySelector(".newsletter-error-message");
+    var backButton = container.querySelector(".newsletter-back-button");
+    var submitButton = container.querySelector(".newsletter-form-button");
+    var loadingButton = container.querySelector(".newsletter-loading-button");
 
-          const rateLimit = () => {
+    const rateLimit = () => {
+      errorContainer.style.display = "flex";
+      errorMessage.innerText = "Too many signups, please try again in a little while";
+      submitButton.style.display = "none";
+      formInput.style.display = "none";
+      backButton.style.display = "block";
+    }
+
+    var time = new Date();
+    var timestamp = time.valueOf();
+    var previousTimestamp = localStorage.getItem("loops-form-timestamp");
+
+    if (previousTimestamp && Number(previousTimestamp) + 60000 > timestamp) {
+      rateLimit();
+      return;
+    }
+    localStorage.setItem("loops-form-timestamp", timestamp);
+
+    submitButton.style.display = "none";
+    loadingButton.style.display = "flex";
+
+    var formBody = "userGroup=&mailingLists=&email=" + encodeURIComponent(formInput.value);
+
+    fetch(event.target.action, {
+      method: "POST",
+      body: formBody,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    })
+      .then((res) => [res.ok, res.json(), res])
+      .then(([ok, dataPromise, res]) => {
+        if (ok) {
+          success.style.display = "flex";
+          form.reset();
+        } else {
+          dataPromise.then(data => {
             errorContainer.style.display = "flex";
-            errorMessage.innerText = "Too many signups, please try again in a little while";
-            submitButton.style.display = "none";
-            formInput.style.display = "none";
-            backButton.style.display = "block";
-          }
-
-          var time = new Date();
-          var timestamp = time.valueOf();
-          var previousTimestamp = localStorage.getItem("loops-form-timestamp");
-
-          if (previousTimestamp && Number(previousTimestamp) + 60000 > timestamp) {
-            rateLimit();
-            return;
-          }
-          localStorage.setItem("loops-form-timestamp", timestamp);
-
-          submitButton.style.display = "none";
-          loadingButton.style.display = "flex";
-
-          var formBody = "userGroup=&mailingLists=&email=" + encodeURIComponent(formInput.value);
-
-          fetch(event.target.action, {
-            method: "POST",
-            body: formBody,
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          })
-            .then((res) => [res.ok, res.json(), res])
-            .then(([ok, dataPromise, res]) => {
-              if (ok) {
-                success.style.display = "flex";
-                form.reset();
-              } else {
-                dataPromise.then(data => {
-                  errorContainer.style.display = "flex";
-                  errorMessage.innerText = data.message ? data.message : res.statusText;
-                });
-              }
-            })
-            .catch(error => {
-              if (error.message === "Failed to fetch") {
-                rateLimit();
-                return;
-              }
-              errorContainer.style.display = "flex";
-              if (error.message) errorMessage.innerText = error.message;
-              localStorage.setItem("loops-form-timestamp", '');
-            })
-            .finally(() => {
-              formInput.style.display = "none";
-              loadingButton.style.display = "none";
-              backButton.style.display = "block";
-            });
+            errorMessage.innerText = data.message ? data.message : res.statusText;
+          });
         }
-
-        function resetFormHandler(event) {
-          var container = event.target.parentNode;
-          var formInput = container.querySelector(".newsletter-form-input");
-          var success = container.querySelector(".newsletter-success");
-          var errorContainer = container.querySelector(".newsletter-error");
-          var errorMessage = container.querySelector(".newsletter-error-message");
-          var backButton = container.querySelector(".newsletter-back-button");
-          var submitButton = container.querySelector(".newsletter-form-button");
-
-          success.style.display = "none";
-          errorContainer.style.display = "none";
-          errorMessage.innerText = "Oops! Something went wrong, please try again";
-          backButton.style.display = "none";
-          formInput.style.display = "flex";
-          submitButton.style.display = "flex";
+      })
+      .catch(error => {
+        if (error.message === "Failed to fetch") {
+          rateLimit();
+          return;
         }
+        errorContainer.style.display = "flex";
+        if (error.message) errorMessage.innerText = error.message;
+        localStorage.setItem("loops-form-timestamp", '');
+      })
+      .finally(() => {
+        formInput.style.display = "none";
+        loadingButton.style.display = "none";
+        backButton.style.display = "block";
+      });
+  }
 
-        var formContainers = document.getElementsByClassName("newsletter-form-container");
-        
-        for (var i = 0; i < formContainers.length; i++) {
-          var formContainer = formContainers[i]
-          var handlersAdded = formContainer.classList.contains('newsletter-handlers-added')
-          if (handlersAdded) continue;
-          formContainer
-            .querySelector(".newsletter-form")
-            .addEventListener("submit", submitHandler);
-          formContainer
-            .querySelector(".newsletter-back-button")
-            .addEventListener("click", resetFormHandler);
-          formContainer.classList.add("newsletter-handlers-added");
-        }
-      `}</Script>
+  function resetFormHandler(event) {
+    var container = event.target.parentNode;
+    var form = container.querySelector(".newsletter-form");
+    var formInput = form.querySelector('input[name="email"]');
+    var success = container.querySelector(".newsletter-success");
+    var errorContainer = container.querySelector(".newsletter-error");
+    var errorMessage = container.querySelector(".newsletter-error-message");
+    var backButton = container.querySelector(".newsletter-back-button");
+    var submitButton = container.querySelector(".newsletter-form-button");
+
+    success.style.display = "none";
+    errorContainer.style.display = "none";
+    errorMessage.innerText = "Oops! Something went wrong, please try again";
+    backButton.style.display = "none";
+    formInput.style.display = "flex";
+    submitButton.style.display = "flex";
+  }
+
+  var formContainers = document.getElementsByClassName("newsletter-form-container");
+
+  for (var i = 0; i < formContainers.length; i++) {
+    var formContainer = formContainers[i];
+    var handlersAdded = formContainer.classList.contains('newsletter-handlers-added');
+    if (handlersAdded) continue;
+    formContainer
+      .querySelector(".newsletter-form")
+      .addEventListener("submit", submitHandler);
+    formContainer
+      .querySelector(".newsletter-back-button")
+      .addEventListener("click", resetFormHandler);
+    formContainer.classList.add("newsletter-handlers-added");
+  }
+`}</Script>
+
     </div>
   )
 }
