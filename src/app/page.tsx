@@ -41,47 +41,45 @@ const Home = () => {
         </svg>
       </div>
 
-      <section className="flex flex-col items-center justify-center w-full px-4 pb-8">
-  <div className="newsletter-form-container w-full max-w-md mx-auto">
-    <form 
-      className="newsletter-form flex flex-col items-center gap-3 bg-transparent p-0 rounded-none border-0 shadow-none"
-      action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
-      method="POST"
+      <section className="flex flex-col items-center justify-center w-full px-4 pb-12">
+  <form 
+    className="flex flex-col items-center gap-3 w-full max-w-md mx-auto bg-transparent p-0 border-0 shadow-none"
+    action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
+    method="POST"
+  >
+    <input
+      className="w-full px-4 py-2 rounded-md border-2 border-[#B7D84B] bg-[#F9F9F9] text-black text-lg focus:outline-none focus:ring-2 focus:ring-[#B7D84B] font-mono"
+      name="email"
+      type="email"
+      placeholder="youremail@gmail.com"
+      required
+    />
+    <button 
+      type="submit"
+      className="w-full px-4 py-2 rounded-full bg-gradient-to-r from-[#B7D84B] via-green-200 to-blue-100 text-green-900 text-lg font-bold shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-100 hover:to-[#B7D84B] focus:outline-none focus:ring-2 focus:ring-green-400 animate-pop flex items-center justify-center gap-2"
     >
-      <input
-        className="newsletter-form-input w-full px-4 py-2 rounded-md border-2 border-[#B7D84B] bg-[#F9F9F9] text-black text-lg focus:outline-none focus:ring-2 focus:ring-[#B7D84B] font-mono"
-        name="email"
-        type="email"
-        placeholder="youremail@gmail.com"
-        required
-      />
-      <button 
-        type="submit"
-        className="newsletter-form-button w-full px-4 py-2 rounded-full bg-gradient-to-r from-[#B7D84B] via-green-200 to-blue-100 text-green-900 text-lg font-bold shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-100 hover:to-[#B7D84B] focus:outline-none focus:ring-2 focus:ring-green-400 animate-pop flex items-center justify-center gap-2"
-      >
-        <span>get updates</span>
-      </button>
+      <span>get updates</span>
+    </button>
 
-      <div className="newsletter-loading-button hidden w-full px-4 py-2 text-center text-sm text-gray-600">
-        Submitting...
-      </div>
+    <div className="newsletter-loading-button hidden w-full px-4 py-2 text-center text-sm text-gray-600">
+      Submitting...
+    </div>
 
-      <div className="newsletter-success hidden text-green-700 text-center text-sm">
-        You're on the list! 🎉
-      </div>
+    <div className="newsletter-success hidden text-green-700 text-center text-sm">
+      You're on the list! 🎉
+    </div>
 
-      <div className="newsletter-error hidden text-red-600 text-center text-sm">
-        <span className="newsletter-error-message">Oops! Something went wrong.</span>
-      </div>
+    <div className="newsletter-error hidden text-red-600 text-center text-sm">
+      <span className="newsletter-error-message">Oops! Something went wrong.</span>
+    </div>
 
-      <button 
-        type="button" 
-        className="newsletter-back-button hidden text-blue-600 underline text-sm"
-      >
-        Try again
-      </button>
-    </form>
-  </div>
+    <button 
+      type="button" 
+      className="newsletter-back-button hidden text-blue-600 underline text-sm"
+    >
+      Try again
+    </button>
+  </form>
 </section>
 
 
