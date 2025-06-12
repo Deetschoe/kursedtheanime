@@ -77,12 +77,7 @@ const Home = () => {
         <span className="newsletter-error-message">Oops! Something went wrong.</span>
       </div>
 
-      <button 
-        type="button" 
-        className="newsletter-back-button hidden text-blue-600 underline text-sm"
-      >
-        Try again
-      </button>
+      
     </form>
   </div>
 </section>
@@ -227,8 +222,11 @@ const Home = () => {
 
   function resetFormHandler(event) {
     var container = event.target.parentNode;
-    var form = container.querySelector(".newsletter-form");
-    var formInput = form.querySelector('input[name="email"]');
+var form = container.querySelector(".newsletter-form");
+if (!form) return;
+
+var formInput = form.querySelector('input[name="email"]');
+if (!formInput) return;
     var success = container.querySelector(".newsletter-success");
     var errorContainer = container.querySelector(".newsletter-error");
     var errorMessage = container.querySelector(".newsletter-error-message");
