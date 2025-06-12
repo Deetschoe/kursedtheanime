@@ -66,7 +66,7 @@ const Home = () => {
     </div>
 
     <div className="newsletter-success hidden text-green-700 text-center text-sm">
-      You're on the list! 🎉
+      Thanks! stay tuned for updates
     </div>
 
     <div className="newsletter-error hidden text-red-600 text-center text-sm">
