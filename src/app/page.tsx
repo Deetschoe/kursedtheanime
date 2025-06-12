@@ -7,117 +7,127 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      {/* Black Header */}
-      <div className="w-full bg-black py-3 px-4 flex justify-end items-center fixed top-0 z-10">
-        <div className="flex gap-4 items-center">
-          <a href="https://minimalmaru.com/collections/pineabur" target="_blank" rel="noopener noreferrer">
-            <span className="text-white text-lg font-medium hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300">Support the Film</span>
-          </a>
-          <a href="https://discord.gg/pineabur" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-            <Image src="/discord.png" alt="Discord" width={28} height={28} className="brightness-0 invert hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300" />
-          </a>
-          <a href="https://twitter.com/pineabur" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-            <Image src="/twitter.png" alt="Twitter" width={28} height={28} className="brightness-0 invert hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300" />
-          </a>
-          <a href="https://instagram.com/pineabur" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-            <Image src="/instagram.png" alt="Instagram" width={28} height={28} className="brightness-0 invert hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300" />
-          </a>
+    <div className="min-h-screen bg-[#F9F9F9] text-black flex flex-col justify-between">
+      {/* Hero Section with main artwork and playful background */}
+      <section className="relative flex flex-col items-center justify-center min-h-[60vh] pt-32 pb-8 px-4 overflow-hidden">
+        {/* Playful background circle */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] bg-orange-200 rounded-full z-0 animate-pop" />
+        {/* Floating retro shapes */}
+        <div className="absolute left-10 top-32 w-32 h-32 bg-[#B7D84B]/30 rounded-full blur-2xl animate-float z-0" />
+        <div className="absolute right-10 bottom-24 w-40 h-20 bg-blue-100/40 rounded-full blur-xl rotate-12 animate-float2 z-0" />
+        {/* Main hero image (artwork) with drop shadow */}
+        <div className="relative w-full max-w-3xl aspect-[16/7] rounded-2xl overflow-visible z-10 animate-fadein">
+          <img src="/gif.gif" alt="Main Visual" className="object-cover w-full h-full drop-shadow-2xl outline outline-4 outline-white animate-bounce-slow" />
+          {/* Overlayed title and tagline */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-[#F9F9F9]/80 via-transparent to-[#F9F9F9]/40">
+            <h1 className="text-6xl md:text-8xl font-extrabold bg-blue-100/40 tracking-tight font-sans drop-shadow-lg mb-4 animate-pop">sf the anime</h1>
+            <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto font-light animate-fadein delay-200 text-center">
+            スタートアップ、AIの仲間、そして人間の精神の物語<br/>
+              A story of startups, AI companions, and the human spirit
+            </p>
+          </div>
+        </div>
+        {/* Animated arrow for scroll hint */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 mb-2 z-20 animate-bounce">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="#B7D84B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
+        <div className="text-lg md:text-xl font-mono text-green-700 p-1 mt-8 z-10 animate-fadein delay-400">Sign up for updates</div>
+      </section>
+
+      {/* Wavy divider */}
+      <div className="w-full overflow-hidden -mt-4 mb-8">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-12">
+          <path d="M0 40 Q 360 80 720 40 T 1440 40 V80 H0Z" fill="#B7D84B" fillOpacity="0.18" />
+        </svg>
+      </div>
+
+      {/* Newsletter Form Section */}
+      <section className="flex flex-col items-center justify-center w-full px-4 pb-8">
+        <form 
+          className="flex flex-col items-center gap-3 w-full max-w-md mx-auto bg-transparent p-0 rounded-none border-0 shadow-none"
+          action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
+          method="POST"
+        >
+          <input
+            className="w-full px-4 py-2 rounded-md border-2 border-[#B7D84B] bg-[#F9F9F9] text-black text-lg focus:outline-none focus:ring-2 focus:ring-[#B7D84B] font-mono"
+            name="newsletter-form-input"
+            type="email"
+            placeholder="youremail@gmail.com"
+            required
+          />
+          <button 
+            type="submit"
+            className="w-full px-4 py-2 rounded-full bg-gradient-to-r from-[#B7D84B] via-green-200 to-blue-100 text-green-900 text-lg font-bold shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-100 hover:to-[#B7D84B] focus:outline-none focus:ring-2 focus:ring-green-400 animate-pop flex items-center justify-center gap-2"
+          >
+            <span>get updates</span>
+          </button>
+        </form>
+      </section>
+
+      {/* Video Section */}
+      <section className="flex flex-col items-center justify-center w-full px-4 pb-8">
+        <div className="w-full max-w-2xl aspect-video rounded-xl shadow-lg overflow-hidden">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/IJ72jJr6AIk"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
+        </div>
+      </section>
+
+      {/* Wide image near the bottom - full-bleed with playful background */}
+      <section className="relative w-full pb-8 overflow-hidden">
+        <div className="absolute left-0 top-1/3 w-40 h-40 bg-[#B7D84B]/20 rounded-full blur-2xl animate-float z-0" />
+        <div className="absolute right-0 bottom-0 w-56 h-24 bg-blue-100/30 rounded-full blur-xl animate-float2 z-0" />
+        <img src="/pineabur.gif" alt=" Wide Visual" className="w-full h-[28vw] min-h-[200px] max-h-[400px] object-cover object-center animate-fadein outline outline-4 outline-white" />
+      </section>
+
+      {/* Retro anime-style scene transition bar with sparkles */}
+      <div className="relative w-full flex items-center justify-center py-8">
+        <div className="w-full h-8 bg-gradient-to-r from-orange-200 via-[#B7D84B] to-blue-100 flex items-center justify-center overflow-hidden shadow-md rounded-full">
+          {/* Sparkles and stars */}
+          <svg className="mx-2 animate-twinkle" width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="8" r="2" fill="#fff8dc"/>
+            <circle cx="16" cy="4" r="1.5" fill="#fff8dc"/>
+            <circle cx="24" cy="12" r="1.2" fill="#fff8dc"/>
+            <circle cx="28" cy="6" r="1" fill="#fff8dc"/>
+          </svg>
+          <svg className="mx-2 animate-twinkle delay-200" width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="10" r="1.2" fill="#fff8dc"/>
+            <circle cx="18" cy="8" r="2" fill="#fff8dc"/>
+            <circle cx="26" cy="4" r="1.5" fill="#fff8dc"/>
+          </svg>
+        </div>
+        {/* Floating pixel mascot (star) */}
+        <div className="absolute right-8 -top-6 animate-bounce">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,4 24,16 36,16 26,24 30,36 20,28 10,36 14,24 4,16 16,16" fill="#fff8dc" stroke="#B7D84B" strokeWidth="2"/>
+          </svg>
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 pt-16">
-        <div className="max-w-4xl w-full space-y-6 text-center">
-          {/* Title and Countdown */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-black pt-2">
-            Pineabur
-          </h1>
-          
-          <p className="text-xl text-gray-800">
-            A film about a programmer named Maru who discovers AGI in San Francisco
-          </p>
-          
-          
-          <div className="flex justify-center w-full my-6">
-            <div className="w-[1080px] h-[1080px] max-w-full relative">
-              <Image 
-                src="/pineabur.gif" 
-                alt="Pineabur Film Preview" 
-                width={1080} 
-                height={1080} 
-                className="rounded-lg"
-                priority
-              />
-            </div>
-          </div>
-
-          <div className="text-lg md:text-xl font-mono bg-gray-100 p-4 rounded-lg inline-block border border-gray-200 mb-6">
-            Release Date: Summer 2025
-          </div>
-
-
-          {/* Loops Newsletter Form */}
-          <div className="w-full max-w-md mx-auto">
-            <div className="newsletter-form-container">
-              <form 
-                className="newsletter-form" 
-                action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
-                method="POST" 
-                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}
-              >
-                <input
-                  className="newsletter-form-input w-full px-4 py-2 rounded-md border border-gray-300 bg-white text-black text-sm"
-                  name="newsletter-form-input"
-                  type="email"
-                  placeholder="you@gmail.com"
-                  required
-                />
-                <button 
-                  type="submit"
-                  className="newsletter-form-button w-full px-4 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 transition-all duration-300"
-                >
-                  Get updates about the film
-                </button>
-                <button 
-                  type="button"
-                  className="newsletter-loading-button hidden w-full px-4 py-2 rounded-md bg-gray-800 text-white text-sm font-medium"
-                >
-                  Please wait...
-                </button>
-              </form>
-              <div className="newsletter-success hidden text-center mt-4 text-sm">
-                <p className="newsletter-success-message text-green-500">
-                  Thanks! We&apos;ll only send you important updates about Pineabur.
-                </p>
-              </div>
-              <div className="newsletter-error hidden text-center mt-4 text-sm">
-                <p className="newsletter-error-message text-red-600">
-                  Oops! Something went wrong, please try again
-                </p>
-              </div>
-              <button 
-                className="newsletter-back-button hidden text-gray-400 text-sm mx-auto mt-4 hover:underline"
-                type="button"
-              >
-                ← Back
-              </button>
-            </div>
-          </div>
-          <br></br>
-
-          <div className="text-sm text-gray-600">
-            For business inquiries:{" "}
-            <a href="mailto:pineabur@gmail.com" className="hover:text-black hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300">
-              pineabur@gmail.com
-            </a>
-          </div>
-
-
+      {/* Minimal Black Footer with Socials */}
+      <footer className="w-full bg-black py-4 px-4 flex flex-col items-center justify-center gap-4 mt-auto">
+        <div className="flex gap-6 items-center">
+          <a href="https://www.etsy.com/shop/minimalanimeclothes?section_id=53961539" target="_blank" rel="noopener noreferrer">
+            <span className="text-white text-lg font-medium">Shop Merch</span>
+          </a>
+          <a href="https://discord.gg/pineabur" target="_blank" rel="noopener noreferrer">
+            <Image src="/discord.png" alt="Discord" width={28} height={28} className="brightness-0 invert" />
+          </a>
+          <a href="https://twitter.com/pineabur" target="_blank" rel="noopener noreferrer">
+            <Image src="/twitter.png" alt="Twitter" width={28} height={28} className="brightness-0 invert" />
+          </a>
+          <a href="https://instagram.com/pineabur" target="_blank" rel="noopener noreferrer">
+            <Image src="/instagram.png" alt="Instagram" width={28} height={28} className="brightness-0 invert" />
+          </a>
         </div>
-      </div>
-      <br></br>
-      <br></br>
-
+      </footer>
       <Script id="loops-form-handler">{`
         function submitHandler(event) {
           event.preventDefault();
@@ -225,4 +235,4 @@ const Home = () => {
   )
 }
 
-export default Home// force update
+export default Home
