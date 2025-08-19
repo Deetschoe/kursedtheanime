@@ -187,6 +187,4 @@ const NavLink = ({ text }: NavLinkProps) => (
   </Link>
 );
 
-
-
 export default KursedNewsArticle;

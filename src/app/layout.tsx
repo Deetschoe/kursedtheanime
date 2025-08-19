@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "sf the anime",
   description: "the adventure awaits...",
   icons: {
-    icon: '/favicon.ico'  // Add the forward slash here
+    icon: '/favicon.ico'
   },
 };
 
