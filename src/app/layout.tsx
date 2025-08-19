@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pineabur",
+  title: "sf the anime",
   description: "the adventure awaits...",
   icons: {
     icon: '/favicon.ico'  // Add the forward slash here
