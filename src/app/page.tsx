@@ -31,7 +31,6 @@ const Home = () => {
         <div className="absolute left-1/2 bottom-0 -translate-x-1/2 mb-2 z-20 animate-bounce">
           <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="#B7D84B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
-        <div className="text-lg md:text-xl font-mono text-green-700 p-1 mt-8 z-10 animate-fadein delay-400">Sign up for updates</div>
       </section>
 
       {/* Wavy divider */}
@@ -41,50 +40,6 @@ const Home = () => {
         </svg>
       </div>
 
-      <section className="flex flex-col items-center justify-center w-full px-4 pb-12">
-  <div className="newsletter-form-container w-full max-w-md">
-        <form 
-  className="newsletter-form flex flex-col items-center gap-3 w-full bg-transparent p-0 border-0 shadow-none"
-          action="https://app.loops.so/api/newsletter-form/cm6qsb6ro00yao1yz80hcjsvi" 
-          method="POST"
-  noValidate
-  target="_self"
->
-
-      <input
-        className="newsletter-form-input w-full px-4 py-2 rounded-md border-2 border-[#B7D84B] bg-[#F9F9F9] text-black text-lg focus:outline-none focus:ring-2 focus:ring-[#B7D84B] font-mono"
-        name="email"
-        type="email"
-        placeholder="youremail@gmail.com"
-        required
-      />
-          <button 
-            type="submit"
-        className="newsletter-form-button w-full px-4 py-2 rounded-full bg-gradient-to-r from-[#B7D84B] via-green-200 to-blue-100 text-green-900 text-lg font-bold shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-100 hover:to-[#B7D84B] focus:outline-none focus:ring-2 focus:ring-green-400 animate-pop flex items-center justify-center gap-2"
-          >
-            <span>get updates</span>
-          </button>
-
-      <div className="newsletter-loading-button hidden w-full px-4 py-2 text-center text-sm text-gray-600">
-        Submitting...
-      </div>
-
-      <div className="newsletter-success hidden text-green-700 text-center text-sm">
-        Thanks! stay tuned for updates
-      </div>
-
-      <div className="newsletter-error hidden text-red-600 text-center text-sm">
-        <span className="newsletter-error-message">Oops! Something went wrong.</span>
-      </div>
-
-      <div className="newsletter-back-button hidden w-full px-4 py-2 rounded-full bg-gray-200 text-gray-700 text-lg font-bold shadow-md transition-all duration-300 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 animate-pop flex items-center justify-center gap-2">
-        <span>Try Again</span>
-      </div>
-
-      
-        </form>
-  </div>
-</section>
 
       {/* Video Section */}
       <section className="flex flex-col items-center justify-center w-full px-4 pb-8">
