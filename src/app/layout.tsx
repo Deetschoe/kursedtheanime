@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "sf the anime",
-  description: "the adventure awaits...",
+  title: "Minimal Maru",
+  description: "Redirecting...",
   icons: {
     icon: '/favicon.ico'
   },
